@@ -39,7 +39,9 @@ You will need your project token for initializing your library. You can get your
 4. Run `pod install` in your Xcode project directory. CocoaPods should download and install the MSD library, and create a new Xcode workspace. Open up this workspace in Xcode or typing `open *.xcworkspace` in your terminal.
 
 ## 2. Initialize MSD
-Import msd_sdk into AppDelegate.swift, and initialize MSD within application:didFinishLaunchingWithOptions:
+
+Import `msd_sdk` into AppDelegate.swift, and initialize `MSD` within `application:didFinishLaunchingWithOptions:`
+
 ```swift
 import msd_sdk
 
@@ -53,11 +55,11 @@ func application(_ application: UIApplication,
     ...
 }
 ```
-
-Maintain this msdClient as a singleton object so that it can be used to call other sdk functions.
+Maintain this `msdClient` as a singleton object so that it can be used to call other sdk functions.
 ## 3. Discover Events
 
-To ensure accurate and comprehensive event tracking, it is recommended to call the discoverEvents function before invoking the track function in your SDK integration. The discoverEvents function retrieves the essential information related to track events, such as event names, properties, and default properties. This step allows you to populate the necessary data and configure the event tracking accordingly.
+To ensure accurate and comprehensive event tracking, it is recommended to call the `discoverEvents` function before invoking the track function in your SDK integration. The `discoverEvents` function retrieves the essential information related to track events, such as event names, properties, and default properties. This step allows you to populate the necessary data and configure the event tracking accordingly.
+
 
 ```swift
 msdClient.discoverEvents(success: { (response) in
@@ -66,9 +68,10 @@ msdClient.discoverEvents(success: { (response) in
             //Handle failure
         })
 ```
+
 ## 4. Track Event
 
-To track custom events using our SDK, you can utilize the track function. This function allows you to capture specific actions or interactions within your application and gather valuable data for analysis.
+To track custom events using our SDK, you can utilize the `track` function. This function allows you to capture specific actions or interactions within your application and gather valuable data for analysis.
 
 Here's an example of how to use the track function:
 ```swift
@@ -88,70 +91,72 @@ The SDK automatically includes several properties when tracking events, eliminat
 
 | key           | Description                            | Example Value
 | ------------- | -------------------------------------  | ---------------------------- |
-| blox_uuid     | Device UUID generated                  | 5fbeac07-f385-4145-a690-e98571ae985e
-| platform      | Platform of the user                   | ios
-| medium        | Medium from where requests are sent    | application
-| timestamp     | Timestamp of the request               | 1620989873
-| referrer      | same values as platform for mobile app | ios
-| user_id       | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e
-| url           | Bundle id of the application           | com.example.myapp
+| `blox_uuid`     | Device UUID generated                  | 5fbeac07-f385-4145-a690-e98571ae985e
+| `platform`      | Platform of the user                   | ios
+| `medium`        | Medium from where requests are sent    | application
+| `timestamp`     | Timestamp of the request               | 1620989873
+| `referrer`      | same values as platform for mobile app | ios
+| `user_id`       | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e
+| `url`           | Bundle id of the application           | com.example.myapp
 
 <!-- TABLE_GENERATE_END -->
 
 ## 5. Get Recommendations
 
-The getRecommendation function in the SDK allows you to retrieve recommendations based on specific search criteria and properties. This function provides a convenient way to fetch recommendations and receive the results asynchronously.
+The getRecommendation functions in the SDK allows you to retrieve recommendations based on specific search criteria and properties. This function provides a convenient way to fetch recommendations and receive the results asynchronously.
 
 ### 1. Get Recommendations by Page
 ```swift
  msdClient.getRecommendationsByPage(
- pageReference: "YOUR_PAGE_NAME",
- properties: RecommendationRequest(
-   catalogs: [:]
-  ),
- correlationID: "UNIQUE_CORRRELATION_ID"
- ) { response, error in
-      if error != nil {
-           //Handle Error case
-      } else {
-           //Handle Success case
-      }
- }
+    pageReference: "YOUR_PAGE_NAME",
+    properties: RecommendationRequest(
+        catalogs: [:]
+    ),
+    correlationID: "UNIQUE_CORRRELATION_ID"
+) { response, error in
+    if error != nil {
+        // Handle Error case
+    } else {
+        // Handle Success case
+    }
+}
+
 ```
 
 ### 2. Get Recommendations by Module
 
 ```swift
  msdClient.getRecommendationsByModule(
- moduleReference: "YOUR_MODULE_NAME",
-  properties: RecommendationRequest(
-  catalogs: [:]
-  ),
-  correlationID: "UNIQUE_CORRRELATION_ID"
- ) { response, error in
-      if error != nil {
-           //Handle Error case
-      } else {
-           //Handle Success case
-      }
- }
+    moduleReference: "YOUR_MODULE_NAME",
+    properties: RecommendationRequest(
+        catalogs: [:]
+    ),
+    correlationID: "UNIQUE_CORRRELATION_ID"
+) { response, error in
+    if error != nil {
+        // Handle Error case
+    } else {
+        // Handle Success case
+    }
+}
+
 ```
 
 ### 3. Get Recommendations by Strategy
 ```swift
-  msdClient.getRecommendationsByStrategy(
- strategyReference: "YOUR_STRATEGY_NAME",
- properties: RecommendationRequest(
-  catalogs: [:]
- ),
- correlationID: "UNIQUE_CORRRELATION_ID"
- ) { response, error in
-     if error != nil {
-         //Handle Error case
-     } else {
-         //Handle Success case
-     }
- }
+msdClient.getRecommendationsByStrategy(
+    strategyReference: "YOUR_STRATEGY_NAME",
+    properties: RecommendationRequest(
+        catalogs: [:]
+    ),
+    correlationID: "UNIQUE_CORRRELATION_ID"
+) { response, error in
+    if error != nil {
+        // Handle Error case
+    } else {
+        // Handle Success case
+    }
+}
 
 ```
 **Note:** The `correlationId` is an optional parameter that allows you to provide a unique correlation ID for the search request. It is important to ensure that the `correlationId` is unique across pages for both search and track API calls.
@@ -163,17 +168,17 @@ The SDK automatically includes several properties when tracking events, eliminat
 
 | key           | Description                            | Example Value
 | ------------- | -------------------------------------  | ---------------------------- |
-| blox_uuid     | Device UUID generated                  | 5fbeac07-f385-4145-a690-e98571ae985e
-| platform      | Platform of the user                   | ios
-| medium        | Medium from where requests are sent    | application
-| user_id       | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e
-| url           | Bundle id of the application           | com.example.myapp
+| `blox_uuid`     | Device UUID generated                  | 5fbeac07-f385-4145-a690-e98571ae985e
+| `platform`      | Platform of the user                   | ios
+| `medium`        | Medium from where requests are sent    | application
+| `user_id`       | user id passed while calling setUser   | 81bf1152-ce89-4954-b38e-f81875258f6e
+| `url`           | Bundle id of the application           | com.example.myapp
 
 <!-- TABLE_GENERATE_END -->
 
 ## 6. Set User
 
-The setUser function in the SDK allows you to associate a user ID with subsequent API calls after the user has logged in. This user ID is used to track user-specific events and behaviors, providing personalized experiences and accurate analytics.
+The `setUser` function in the SDK allows you to associate a user ID with subsequent API calls after the user has logged in. This user ID is used to track user-specific events and behaviors, providing personalized experiences and accurate analytics.
 
 ```swift
  msdClient.setUser(userId: "YOUR_USER_ID")
@@ -181,7 +186,7 @@ The setUser function in the SDK allows you to associate a user ID with subsequen
 
 ## 7. Reset User Profile
 
-The resetUserProfile function in the SDK allows you to clear the user information and reset the SDK state when the user logs out of your application. This ensures that any user-specific data and tracking are cleared and no longer associated with the user.
+The `resetUserProfile` function in the SDK allows you to clear the user information and reset the SDK state when the user logs out of your application. This ensures that any user-specific data and tracking are cleared and no longer associated with the user.
 
 ```swift
  msdClient.resetUserProfile()
@@ -191,7 +196,7 @@ The resetUserProfile function in the SDK allows you to clear the user informatio
 
 The SDK provides internal logging capabilities for debugging purposes. By default, the logging feature is disabled. 
 
-To enable internal logging, set isLoggingEnabled to true:
+To enable internal logging, set `isLoggingEnabled` to `true`:
 
 ```swift
 msdClient.isLoggingEnabled = true
@@ -206,15 +211,29 @@ func application(_ application: UIApplication,
                  didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     ...
     
-   let msdClient =  MSD.initialize(
+    let msdClient =  MSD.initialize(
  	token: "YOUR_TOKEN",
  	baseUrl: "https://api.msd.com"
-   );
+    );
 
     msdClient.track(
  	eventName: "YOUR_CUSTOM_EVENT_NAME",
  	Properties: ["YOUR_KEY" : "YOUR_VALUE"]
     );
+
+    msdClient.getRecommendationsByPage(
+        pageReference: "YOUR_PAGE_NAME",
+        properties: RecommendationRequest(
+            catalogs: [:]
+        ),
+        correlationID: "UNIQUE_CORRRELATION_ID"
+    ) { response, error in
+        if error != nil {
+            // Handle Error case
+        } else {
+            // Handle Success case
+        }
+    }
 
     ...
 }
