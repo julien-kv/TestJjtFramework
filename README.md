@@ -102,7 +102,7 @@ The SDK automatically includes several properties when tracking events, eliminat
 
 The getRecommendation function in the SDK allows you to retrieve recommendations based on specific search criteria and properties. This function provides a convenient way to fetch recommendations and receive the results asynchronously.
 
-###1. Get Recommendations by Page
+### 1. Get Recommendations by Page
 ```swift
  msdClient.getRecommendationsByPage(
  pageReference: "YOUR_PAGE_NAME",
