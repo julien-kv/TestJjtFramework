@@ -98,7 +98,7 @@ The SDK automatically includes several properties when tracking events, eliminat
 
 <!-- TABLE_GENERATE_END -->
 
-##5. Get Recommendations
+## 5. Get Recommendations
 
 The getRecommendation function in the SDK allows you to retrieve recommendations based on specific search criteria and properties. This function provides a convenient way to fetch recommendations and receive the results asynchronously.
 
@@ -119,7 +119,7 @@ The getRecommendation function in the SDK allows you to retrieve recommendations
  }
 ```
 
-###2. Get Recommendations by Module
+### 2. Get Recommendations by Module
 
 ```swift
  msdClient.getRecommendationsByModule(
@@ -137,7 +137,7 @@ The getRecommendation function in the SDK allows you to retrieve recommendations
  }
 ```
 
-###3. Get Recommendations by Strategy
+### 3. Get Recommendations by Strategy
 ```swift
   msdClient.getRecommendationsByStrategy(
  strategyReference: "YOUR_STRATEGY_NAME",
@@ -171,7 +171,7 @@ The SDK automatically includes several properties when tracking events, eliminat
 
 <!-- TABLE_GENERATE_END -->
 
-##6. Set User
+## 6. Set User
 
 The setUser function in the SDK allows you to associate a user ID with subsequent API calls after the user has logged in. This user ID is used to track user-specific events and behaviors, providing personalized experiences and accurate analytics.
 
@@ -179,7 +179,7 @@ The setUser function in the SDK allows you to associate a user ID with subsequen
  msdClient.setUser(userId: "YOUR_USER_ID")
 ```
 
-##7. Reset User Profile
+## 7. Reset User Profile
 
 The resetUserProfile function in the SDK allows you to clear the user information and reset the SDK state when the user logs out of your application. This ensures that any user-specific data and tracking are cleared and no longer associated with the user.
 
@@ -187,7 +187,7 @@ The resetUserProfile function in the SDK allows you to clear the user informatio
  msdClient.resetUserProfile()
 ```
 
-##8. MSD debugging and logging
+## 8. MSD debugging and logging
 
 The SDK provides internal logging capabilities for debugging purposes. By default, the logging feature is disabled. 
 
