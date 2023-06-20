@@ -1,0 +1,73 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TestJjtFramework",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Home",
+        "printedName": "Home",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "initialize",
+            "printedName": "initialize(token:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Home",
+                "printedName": "TestJjtFramework.Home",
+                "usr": "s:16TestJjtFramework4HomeC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16TestJjtFramework4HomeC10initialize5tokenACSS_tFZ",
+            "mangledName": "$s16TestJjtFramework4HomeC10initialize5tokenACSS_tFZ",
+            "moduleName": "TestJjtFramework",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:16TestJjtFramework4HomeC",
+        "mangledName": "$s16TestJjtFramework4HomeC",
+        "moduleName": "TestJjtFramework",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/julien\/Desktop\/TestJjtFramework\/TestJjtFramework\/Home.swift",
+      "kind": "StringLiteral",
+      "offset": 209,
+      "length": 7,
+      "value": "\"token\""
+    }
+  ]
+}

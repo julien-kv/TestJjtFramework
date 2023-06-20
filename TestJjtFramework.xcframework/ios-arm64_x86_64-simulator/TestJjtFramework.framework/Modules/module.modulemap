@@ -1,0 +1,11 @@
+framework module TestJjtFramework {
+  umbrella header "TestJjtFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module TestJjtFramework.Swift {
+  header "TestJjtFramework-Swift.h"
+  requires objc
+}
