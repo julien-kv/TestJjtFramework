@@ -4,7 +4,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TestJjtFramework"
   spec.version      = "0.0.1"
-  spec.summary      = "A short description of TestJjtFramework."
+  spec.summary      = "he Mixpanel library for iOS is an open source project, and we'd love to see your contributions! We'd also love for you to come and work with us! Check out https://mixpanel.com/jobs/#openings for details"
 
   spec.description  = <<-DESC
   The Mixpanel library for iOS is an open source project, and we'd love to see your contributions! We'd also love for you to come and work with us! Check out https://mixpanel.com/jobs/#openings for details.
@@ -44,6 +44,7 @@ If you are using Swift, we recommend our **[Swift Library](https://github.com/mi
 
   # spec.platform     = :ios
   spec.platform     = :ios, "5.0"
+  spec.ios.deployment_target = '11.0'
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
